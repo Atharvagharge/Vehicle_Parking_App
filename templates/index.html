@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1>Welcome to ParkEasy</h1>
+        <p class="lead">Find and book parking spots with ease. Manage your parking efficiently.</p>
+        {% if not session.user_id %}
+        <div class="mt-4">
+            <a href="{{ url_for('register') }}" class="btn btn-light btn-lg btn-custom me-3">
+                <i class="bi bi-person-plus"></i> Get Started
+            </a>
+            <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg btn-custom">
+                <i class="bi bi-box-arrow-in-right"></i> Login
+            </a>
+        </div>
+        {% else %}
+        <div class="mt-4">
+            {% if session.user_type == 'admin' %}
+            <a href="{{ url_for('admin_dashboard') }}" class="btn btn-light btn-lg btn-custom">
+                <i class="bi bi-speedometer2"></i> Go to Dashboard
+            </a>
+            {% else %}
+            <a href="{{ url_for('user_dashboard') }}" class="btn btn-light btn-lg btn-custom">
+                <i class="bi bi-car-front"></i> Find Parking
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col">
+                <h2 class="mb-3">Why Choose ParkEasy?</h2>
+                <p class="lead text-muted">Experience the future of parking management</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-search display-4 text-primary mb-3"></i>
+                        <h5 class="card-title">Easy Search</h5>
+                        <p class="card-text">Find available parking spots near you with our intuitive search feature.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-calendar-check display-4 text-success mb-3"></i>
+                        <h5 class="card-title">Instant Booking</h5>
+                        <p class="card-text">Book your parking spot instantly with just a few clicks. No waiting, no hassle.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-shield-check display-4 text-info mb-3"></i>
+                        <h5 class="card-title">Secure & Reliable</h5>
+                        <p class="card-text">Your parking is guaranteed and secure with our trusted platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="text-primary">100+</h3>
+                    <p>Parking Lots</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="text-success">5000+</h3>
+                    <p>Happy Users</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="text-info">24/7</h3>
+                    <p>Support</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stats-card">
+                    <h3 class="text-warning">99%</h3>
+                    <p>Uptime</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
