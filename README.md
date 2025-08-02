@@ -56,7 +56,15 @@ A web application built using **Flask** that helps manage vehicle parking operat
 
 ## Screenshots (Optional)
 
-_Add some UI screenshots here to show how the app looks._
+### Home Page
+![Home Page](screenshots/home_page.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin_dashboard.png)
+
+### User Dashboard
+![User Dashboard](screenshots/user_dashboard.png)
+
 
 ---
 
