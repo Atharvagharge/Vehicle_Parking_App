@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE/editor-specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Environment/configuration
+*.env
+.env
+*.db
+instance/
+
+# Logs
+*.log
+
+# PyInstaller
+*.spec
+dist/
+build/
